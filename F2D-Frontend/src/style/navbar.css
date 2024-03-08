@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&family=Prociono&display=swap');
+.navbar{
+  position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 100;
+    box-shadow: 0 0 30px rgba(10, 5, 0, 0.5); /* New box shadow color */
+}
+.navbar-custom {
+   background-color: #665039;
+   
+}
+.navbar-brand {
+  color: #e8c897;
+  font-family: Playball;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+}
+.nav-link {
+    font-family: Prociono;
+  color: #e4ddd6;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+.btn{
+    font-family: Prociono;
+    color: #665039;
+    background-color: #e8c897;
+    font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+
+}
+.btn:hover{
+    background-color: #baa381;
+}
+.dropdown-menu{
+    background-color: #665039;
+}
+.dropdown-item{
+    background-color: #665039;
+    color: #e8c897;
+    font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  border: solid #665039;
+}
+.dropdown-item:hover{
+    background-color: #846c53;
+    color: #e8c897;
+    
+
+}
+.profile-icon{
+  /* text-align: center; */
+  padding-bottom: 10px;
+  color: white;
+  /* margin-right: 20px; */
+}
+
+.profile-icon:hover{
+  cursor: pointer;
+  color: #e8c897;
+
+}
+.btn-group{
+  margin-right: 100px;
+  background: white;
+  border: solid;
+  border-radius: 100%;
+}
+.modal{
+  /* margin: 50px; */
+  height: 100px;
+  margin-right: 100px;
+  margin-top: 100px;
+  /* width: 100px; */
+  background: #baa381;
+  color: #665039;
+}
+.modal-content{
+  
+  width: 400px;
+  font-family: Prociono;
+    color: #665039;
+    background-color: #e8c897;
+    font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+.button_logout{
+  width: 70px;
+  height: 40px;
+  font-family: Prociono;
+    color: #665039;
+    background-color: #e8c897;
+    font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  border-radius: 5px;
+
+}

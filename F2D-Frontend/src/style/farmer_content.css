@@ -1,0 +1,115 @@
+.farmer-content-options {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: #665039;
+  background: #b18e64;
+  font-family: Prociono;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  list-style-type: none;
+  padding-right: 80px;
+  width: 400px;
+}
+.farmer-content {
+  background: #b18e64;
+}
+.farmer-content-options-name {
+  padding: 3px;
+  margin: 10px;
+  margin-right: 20px;
+}
+.farmer-content-options-name:hover {
+  cursor: pointer;
+  color: #e8c897;
+}
+/* Add this CSS to your stylesheet or component */
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.col-name{
+  margin: 20px;
+  padding: 20px;
+
+}
+.th-margin {
+  margin: 0 20px;
+}
+
+.search_button {
+  width: 600px;
+  margin-right: 5px;
+  height: 33px;
+  color: #665039;
+  padding: 2px;
+  padding-left: 5px;
+  border-radius: 2px;
+  background: #e8c897;
+  font-family: Prociono;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+.search-button-order{
+  padding: 5px;
+}
+.add_button {
+  width: 300px;
+  height: 33px;
+  border-radius: 2px;
+  color: #665039;
+  background: #e8c897;
+  font-family: Prociono;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.product-card {
+  padding: 5px;
+  font-family: Prociono;
+  border-radius: 5px;
+  background: #e8c897;
+}
+.product_img {
+  height: 100px;
+  width: 100px;
+}
+.input_box {
+  background-color: #665039;
+}
+.account_detail{
+  color: #665039;
+font-family: Prociono;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}

@@ -1,0 +1,43 @@
+.question{
+font-family: Prociono;
+}
+.answer{
+    color: #E8C897;
+    font-family: Prociono;
+}
+@media screen and (max-width: 508px) {
+    .answer{
+     width: 200px;
+    }
+   }
+   @media screen and (min-width: 509px) and (max-width: 569px){
+    .answer{
+     width: 300px;
+    }
+   }
+   @media screen and (min-width: 569px) and (max-width: 768px) {
+   .answer{
+    width: 500px;
+   }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for screens with a width between 769px and 1024px */
+    .answer{
+        width: 700px;
+       }
+  }
+  
+  @media screen and (min-width: 1025px) {
+    /* Styles for screens with a minimum width of 1025 pixels */
+    .answer{
+        width: 910px;
+       }
+  }
+  @media screen and (min-width: 1325px) {
+    /* Styles for screens with a minimum width of 1025 pixels */
+    .answer{
+        width: 1150px;
+       }
+  }
+  

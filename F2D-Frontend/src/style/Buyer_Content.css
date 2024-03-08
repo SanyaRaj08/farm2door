@@ -1,0 +1,123 @@
+.buyer_content{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: #665039;
+    background: #b18e64;
+    font-family: Prociono;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    list-style-type: none;
+    padding-right: 80px;
+    width: 400px;
+}
+.buyer_home{
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background: #e8c897;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: #665039;
+    font-family: Prociono;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    list-style-type: none;
+    width: 200px;
+}
+.card{
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    background: #665039;
+    margin-bottom: 5px;
+}
+.item-container{
+    display: flex;
+    
+    flex-wrap: wrap;
+}
+/* .item-container{
+    
+    width: 350px;
+} */
+.b_view{
+    width: 400px;
+}
+.buyer_img{
+    border-radius: 50px;
+}
+.b_chck{
+    margin-left: 10px;
+    width: 150px;
+    color: #e8c897;
+    background: #665039;
+    border-radius: 5px;
+}
+.button{
+
+    color: #665039;
+    border-radius: 5px;
+    background: #e8c897;
+}
+.button:hover{
+    background-color: #e6dbca;
+}
+.buyer_content_options:hover{
+    color: #e8c897;
+}
+.buyer_account{
+    padding-left: 50px;
+    padding-left: 40px;
+    padding-top: 30px;
+    background-color: #665039;
+    font-family: Prociono;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    list-style-type: none;
+    color: #b18e64;
+}
+.buyer_account_search{
+    background-color: #b18e64;
+    width: 400px;
+}
+.account_th{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 60px;
+}
+.buyer_account_content{
+    padding: 10px;
+}
+.account_th_date{
+    padding-right: 140px;
+
+}
+
+.account_th_status{
+
+    padding-right: 300px;
+}
+.address{
+    font-family: Prociono;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    list-style-type: none;
+}
+.add{
+    
+    padding-left: 12px;
+    padding-bottom: 20px;
+
+}
+.icon_add{
+    /* padding-left: 5px; */
+    padding-right: 7px;
+}
