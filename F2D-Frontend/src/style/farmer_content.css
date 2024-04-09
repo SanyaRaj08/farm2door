@@ -103,6 +103,7 @@
   width: 100px;
 }
 .input_box {
+  color: #e8c897;
   background-color: #665039;
 }
 .account_detail{
@@ -112,4 +113,13 @@ font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+}
+
+
+@media screen and (max-width: 1000px) {
+  /* Change flex direction to column when screen size is smaller than 600px */
+  .flex-direction{
+    display: flex;
+    flex-direction: column;
+  }
 }

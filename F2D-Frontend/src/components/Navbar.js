@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../style/navbar.css";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-
   const navigate = useNavigate();
-
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check user authentication status on component mount
+    const userInfo = localStorage.getItem('userInfo');
+    setIsLoggedIn(!!userInfo); // Set isLoggedIn to true if userInfo is not null
+  }, []);
 
   const openModal = () => {
     setModalOpen(true);
@@ -18,15 +23,26 @@ const Navbar = () => {
     setModalOpen(false);
   };
 
-  const handleLogout=()=>{
-    navigate('/');
+  const handleLogout = () => {
+    console.log('Logging out...');
+    
+    // Log content before removal
+    console.log('Before logout:', localStorage.getItem('userInfo'));
+    
+    localStorage.removeItem('userInfo');
+
+    // Log content after removal
+    console.log('After logout:', localStorage.getItem('userInfo'));
+
+    setTimeout(() => {
+      navigate('/');
+    }, 100);
   };
- 
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-custom ">
+    <nav className="navbar navbar-expand-lg navbar-custom">
       <div className="container-fluid">
-        <Link className="navbar-brand " to="/">
+        <Link className="navbar-brand" to="/">
           FarmToDoor
         </Link>
         <button
@@ -42,7 +58,7 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
+          <li className="nav-item">
               <Link className="nav-link" aria-current="page" to="/">
                 Home
               </Link>
@@ -52,15 +68,6 @@ const Navbar = () => {
                 Farmer
               </Link>
             </li>
-            {/* <li className="nav-item">
-              <Link
-                className="nav-link"
-                aria-current="page"
-                to="/FarmerContent"
-              >
-                FarmerContent
-              </Link>
-            </li> */}
             <li className="nav-item">
               <Link className="nav-link" aria-current="page" to="/buyer_auth">
                 Buyer
@@ -71,22 +78,18 @@ const Navbar = () => {
                 FAQ
               </Link>
             </li>
-            {/* <li className="nav-item">
-              <Link className="nav-link" aria-current="page" to="/BuyerContent">
-                BuyerContent
-              </Link>
-            </li> */}
           </ul>
           <div>
-            
             <div className="profile-icon" onClick={openModal}>
               <i className="fas fa-user fa-2x"></i>
             </div>
             {isModalOpen && <Modal closeModal={closeModal} />}
           </div>
-          <button className="button_logout" onClick={handleLogout}>
-            logout
-          </button>
+          {isLoggedIn && (
+            <button className="button_logout" onClick={handleLogout}>
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </nav>
@@ -94,3 +97,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

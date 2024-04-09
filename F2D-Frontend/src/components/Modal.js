@@ -23,7 +23,7 @@ const Modal = ({ closeModal }) => {
   
       if (response.ok) { 
         const data = await response.json();
-        console.log('Received data:', data); // Add this line for debugging
+        console.log('Received data:', data); 
         setUsername(data.name);
         setEmail(data.email);  
       } else {

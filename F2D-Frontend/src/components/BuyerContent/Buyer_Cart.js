@@ -53,12 +53,7 @@ const Buyer_Cart = ({ removeItem, calculateTotal, handleCheckout }) => {
                       />
                       <h3>{item.name}</h3>
                       <p>Price: ${item.price}</p>
-                      <button
-                        className="button"
-                        onClick={() => removeItem(item.id)}
-                      >
-                        Remove from Cart
-                      </button>
+                      
                     </div>
                   ))}
                   {/* <p>Total: ${calculateTotal()}</p> */}
@@ -82,11 +77,7 @@ const Buyer_Cart = ({ removeItem, calculateTotal, handleCheckout }) => {
               <Address />
             </Box>
 
-            <Box
-              className="address"
-              bg="#665039"
-              color="#b18e64"
-            >
+            <Box className="address" bg="#665039" color="#b18e64">
               <h1>Contact Us</h1>
               <Box
                 textAlign="left"

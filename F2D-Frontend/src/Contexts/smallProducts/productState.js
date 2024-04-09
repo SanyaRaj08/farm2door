@@ -6,7 +6,7 @@ const ProductState = (props) => {
   const initialProduct = [];
   const initialCart = [];
   const [products, setProducts] = useState(initialProduct);
-  const[cart , setCart] = useState(initialCart);
+  const [cart, setCart] = useState([]);
 
   // GET ALL products
   const getAllProducts = async () => {
@@ -103,7 +103,7 @@ const deleteProduct = async(id) => {
         deleteProduct,
         getAllIrrespectiveOfUser,
         addToCart,
-        cart
+        cart,setCart
         
       }}
     >

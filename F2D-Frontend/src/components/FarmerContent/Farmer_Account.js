@@ -9,7 +9,7 @@ const Farmer_Account = () => {
   return (
     <ChakraProvider>
       <Box className="farmer-content">
-        <Box display="flex" flexDirection="row">
+        <Box className="flex-direction" display="flex" flexDirection="row">
           <Box margin="10"  marginTop="40" width="40">
             <ul className="farmer-content-options " color="#665039">
               <li className="farmer-content-options-name" color="#665039">
