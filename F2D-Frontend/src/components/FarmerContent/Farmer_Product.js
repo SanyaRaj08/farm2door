@@ -6,12 +6,12 @@ import ProductList from "./ProductList";
 const Farmer_Product = () => {
   return (
     <ChakraProvider>
-      <Box display="flex" flexDirection="row" bg="#665039" minHeight="xl" >
-        <Box padding="10" bg="#B18E64">
+      <Box display="flex" flexDirection="row" bg="rgb(199, 227, 199)" minHeight="xl" >
+        <Box padding="10" bg="rgb(50, 110, 50)">
           <ul className="farmer-content-options " color="#665039" >
-            <li className="farmer-content-options-name" color="#665039">
+            <li className="farmer-content-options-name" color="#fffff">
               <Link to="/FarmerProduct">
-              <Box color="#e8c897" marginBottom="5" marginTop="20">
+              <Box color="white" marginBottom="5" marginTop="20">
               <i class="fa-solid fa-cube "></i> Product
               </Box>
                 
@@ -35,7 +35,7 @@ const Farmer_Product = () => {
             </li>
           </ul>
         </Box>
-        <Box bg="#665039" paddingRight="10" paddingLeft="10" paddingTop="5">
+        <Box bg="rgb(199, 227, 199)" paddingRight="10" paddingLeft="10" paddingTop="5">
           <ProductList/>
         </Box>
       </Box>

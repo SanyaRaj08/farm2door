@@ -3,9 +3,9 @@ import { PieChart, Pie, Cell, Legend } from 'recharts';
 
 const MyPieChart = () => {
   const data = [
-    { name: 'Delivery pending', students: 100, color: '#665039' },
-    { name: 'Sales', students: 300, color: '#B18E64' },
-    { name: 'Cancellation', students: 200, color: '#977955' },
+    { name: 'Delivery pending', students: 100, color: 'rgb(126, 226, 126)' },
+    { name: 'Sales', students: 300, color: 'rgb(50, 81, 50)' },
+    { name: 'Cancellation', students: 200, color: 'rgb(73, 171, 73)' },
   ];
 
   return (
@@ -16,7 +16,7 @@ const MyPieChart = () => {
           dataKey="students"
           outerRadius={100}
           innerRadius={50}
-          fill="#8884d8"
+          fill="RGB(194, 245, 194)"
           label
         >
           {data.map((entry, index) => (
@@ -30,6 +30,7 @@ const MyPieChart = () => {
 };
 
 export default MyPieChart;
+
 
 
 

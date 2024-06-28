@@ -158,6 +158,7 @@ const Buyersignup = () => {
         width="100%"
         style={{ marginTop: 15 }}
         onClick={submitHandler}
+        bg="rgb(50, 81, 50)"
       >
         Sign Up
       </Button>

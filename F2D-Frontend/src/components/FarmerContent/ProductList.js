@@ -63,8 +63,8 @@ const ProductList = () => {
           <Box
             className="modal-content"
             width="80"
-            bg="#b18e64"
-            color="#e8c897v"
+            bg="#fff"
+            color="rgb(50, 81, 50)"
             fontFamily="serif"
             fontSize="xl"
           >
@@ -103,7 +103,7 @@ const ProductList = () => {
               value={producte.quantity}
               onChange={handleChange}
             />
-            <button onClick={handleClick}>Add</button>
+            <button style={{color:"#fff", backgroundColor:"rgb(50, 81, 50)" , width:"80px",borderRadius:"10px", marginTop:"10px" , marginLeft:"50px"}} onClick={handleClick}>Add</button>
           </Box>
         </Box>
       )}
@@ -115,7 +115,7 @@ const ProductList = () => {
             className="product-card"
             width="72"
             marginRight="5" marginTop="5" marginBottom="5" 
-            bg="#E8C897"
+            bg="rgb(50, 81, 50)"
             color="#665039"
             display="flex"
           >
@@ -127,12 +127,13 @@ const ProductList = () => {
               />
             </Box>
             <Box padding="2">
-              <h3>{product.name}</h3>
-              <p>Price: {product.price} Rs</p>
-              <p>{product.quantity} kgs in stock</p>
+              <h3 style={{color:'#ffffff'}}>{product.name}</h3>
+              <p style={{color:'#ffffff'}}>Price: {product.price} Rs</p>
+              <p style={{color:'#ffffff'}}>{product.quantity} kgs in stock</p>
               <Button
-                color="#665039"
-                bg="#E8C897"
+                color="#ffffff"
+                bg="rgb(50, 81, 50)"
+                _hover={{color:"#000"}}
                 onClick={()=>{deleteProduct(product._id)}} // Replace with actual delete functionality
               >
                 <i className="fa-solid fa-trash fa-lg"></i>
@@ -146,3 +147,4 @@ const ProductList = () => {
 };
 
 export default ProductList;
+

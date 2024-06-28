@@ -80,6 +80,12 @@ const getAllIrrespectiveOfUser = async () => {
     }
   };
 
+  const removeItem = (itemId) => {
+    console.log(cart,itemId);
+    setCart(cart.filter((item) => item._id !== itemId));
+    
+  };
+
 // //Delete a product
 const deleteProduct = async(id) => {
   const response = await fetch(`${host}/api/products/deleteProduct/${id}`, {
@@ -103,7 +109,8 @@ const deleteProduct = async(id) => {
         deleteProduct,
         getAllIrrespectiveOfUser,
         addToCart,
-        cart,setCart
+        cart,setCart,
+        removeItem
         
       }}
     >

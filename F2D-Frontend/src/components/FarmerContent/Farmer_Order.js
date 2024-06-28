@@ -1,13 +1,14 @@
-import React from "react";
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, ChakraProvider, useToast } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "../../style/farmer_content.css";
 
 const Farmer_Order = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const toast = useToast();
+
   const orders = [
     {
       orderNo: "12345",
@@ -80,12 +81,22 @@ const Farmer_Order = () => {
     )
   );
 
+  const handleViewDetails = () => {
+    toast({
+      title: "No details available",
+      status: "error",
+      duration: 3000,
+      isClosable: true,
+    });
+  };
+
   return (
     <ChakraProvider>
       <Box display="flex">
-        <Box paddingLeft="10" paddingRight="2" bg="#b18e64" paddingTop="36">
+        {/* Sidebar */}
+        <Box paddingLeft="10" paddingRight="2" bg="rgb(50, 110, 50)" paddingTop="36">
           <ul className="farmer-content-options " color="#665039">
-            <li className="farmer-content-options-name" color="#665039">
+          <li className="farmer-content-options-name" color="#665039">
               <Link to="/FarmerProduct">
                 <Box padding="5">
                   <i class="fa-solid fa-cube "></i> Product
@@ -94,7 +105,7 @@ const Farmer_Order = () => {
             </li>
             <li className="farmer-content-options-name" color="#665039">
               <Link to="/FarmerOrder">
-                <Box color="#e8c897" padding="5" marginRight="5">
+                <Box color="#fff" padding="5" marginRight="5">
                   <i class="fa-solid fa-list-check"></i> Order
                 </Box>
               </Link>
@@ -109,11 +120,11 @@ const Farmer_Order = () => {
           </ul>
         </Box>
 
-        {/* Search bar */}
-        <Box bg="#665039" margin="0" paddingRight="20" paddingLeft="6">
+        {/* Main content */}
+        <Box bg="rgb(174, 225, 174)" margin="0" paddingRight="20" paddingLeft="6">
           <Box
-            bg="#b18e64"
-            color="#665039"
+            bg="#fff"
+            color="rgb(50, 81, 50)"
             margin="5"
             paddingLeft="3"
             fontSize="large"
@@ -125,10 +136,10 @@ const Farmer_Order = () => {
               placeholder="Search orders..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              style={{ backgroundColor: "#b18e64", padding: "5px" }}
+              style={{ backgroundColor: "#fff", padding: "5px" }}
             />
           </Box>
-          <Box margin="5" color="#e8c897">
+          <Box margin="5" color="rgb(50, 81, 50)" fontWeight="medium">
             {/* Order table */}
             <table>
               <thead>
@@ -159,11 +170,7 @@ const Farmer_Order = () => {
                     <td className="col-name th-margin">{order.status}</td>
                     <td className="col-name th-margin">{order.tracking}</td>
                     <td>
-                      {/* Add action buttons or links here */}
-                      {/* Example: */}
-                      <button onClick={() => console.log("View details")}>
-                        View Details
-                      </button>
+                      <button onClick={handleViewDetails}>View Details</button>
                     </td>
                   </tr>
                 ))}
@@ -177,3 +184,4 @@ const Farmer_Order = () => {
 };
 
 export default Farmer_Order;
+

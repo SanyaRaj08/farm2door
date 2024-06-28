@@ -6,11 +6,20 @@
     box-shadow: 0 0 30px rgba(10, 5, 0, 0.5); /* New box shadow color */
 }
 .navbar-custom {
-   background-color: #665039;
+   background-color: white;
    
 }
+.nav-link:active{
+  font-weight: bolder;
+  color: darkgreen;
+}
+.active-link {
+  font-weight: bolder;
+  color: darkgreen; /* Change this to your desired dark leaf green color */
+}
+
 .navbar-brand {
-  color: #e8c897;
+  color: rgb(15, 16, 15);
   font-family: Playball;
   font-size: 30px;
   font-style: normal;
@@ -18,14 +27,14 @@
 }
 .nav-link {
     font-family: Prociono;
-  color: #e4ddd6;
+  color: rgb(15, 16, 15);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
 }
 .btn{
     font-family: Prociono;
-    color: #665039;
+    color: rgb(15, 16, 15);
     background-color: #e8c897;
     font-size: 20px;
   font-style: normal;
@@ -55,7 +64,7 @@
 .profile-icon{
   /* text-align: center; */
   padding-bottom: 10px;
-  color: white;
+  color: rgb(15, 16, 15);
   /* margin-right: 20px; */
 }
 
@@ -83,7 +92,7 @@
   
   width: 400px;
   font-family: Prociono;
-    color: #665039;
+    color: rgb(40, 59, 40);
     background-color: #e8c897;
     font-size: 20px;
   font-style: normal;

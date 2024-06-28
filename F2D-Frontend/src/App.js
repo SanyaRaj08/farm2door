@@ -29,7 +29,7 @@ function App() {
   };
 
   const removeItem = (itemId) => {
-    setCart(cart.filter((item) => item.id !== itemId));
+    setCart(cart.filter((item) => item._id !== itemId));
   };
 
   const calculateTotal = () => {

@@ -1,35 +1,76 @@
-import React from 'react'
-import  { useState } from 'react';
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import React from 'react';
+import { ChakraProvider, Box, Image, Text, Flex, useToast } from "@chakra-ui/react";
 import "../../style/Buyer_Content.css";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import myImage from "../../image/buyer_profile.png";
 
 const Buyer_Account = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [orders, setOrders] = useState([
-    { orderNo: '12345', date: '2023-01-01', shipDate: '2023-01-05', tracking: 'ABC123', status: 'Shipped' },
-    { orderNo: '67890', date: '2022-12-11', shipDate: '2023-02-05', tracking: 'XYZ456', status: 'Processing' },
-    { orderNo: '12355', date: '2021-12-10', shipDate: '2023-01-05', tracking: 'ABC123', status: 'Shipped' },
-    { orderNo: '77890', date: '2020-02-07', shipDate: '2023-02-05', tracking: 'XYZ456', status: 'Processing' },
-    { orderNo: '82345', date: '2019-07-05', shipDate: '2023-01-05', tracking: 'ABC123', status: 'Shipped' },
-    { orderNo: '87890', date: '2018-02-08', shipDate: '2023-02-05', tracking: 'XYZ456', status: 'Processing' },
-    { orderNo: '85345', date: '2019-07-02', shipDate: '2023-01-05', tracking: 'GHC123', status: 'Shipped' }
-    
-  ]);
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
+
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const toast = useToast(); // Initialize toast
+
+  useEffect(() => {
+    fetchUserInfo();
+  }, []);
+
+  const fetchUserInfo = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/getUser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("token"),
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Received data:", data);
+        setUsername(data.name);
+        setEmail(data.email);
+      } else {
+        console.error("Failed to fetch user info");
+      }
+    } catch (error) {
+      console.error("Error fetching user info:", error);
+    }
   };
-  const filteredOrders = orders.filter(order => order.orderNo.includes(searchTerm));
+
+  const handleLogout = () => {
+    console.log("Logging out...");
+
+    // Log content before removal
+    console.log("Before logout:", localStorage.getItem("userInfo"));
+
+    localStorage.removeItem("userInfo");
+
+    // Log content after removal
+    console.log("After logout:", localStorage.getItem("userInfo"));
+
+    // Show toast
+    toast({
+      title: "Logged out successfully",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
+
+    setTimeout(() => {
+      navigate("/");
+    }, 100);
+  };
+
   return (
-<ChakraProvider>
-      <Box display="flex" bg="#665039">
+    <ChakraProvider>
+      <Box display="flex" bg="rgb(174, 225, 174)">
         <Box
           display="flex"
           flexDirection="column"
-          color="#665039"
+          color="rgb(174, 225, 174)"
           className="buyer_content"
           paddingLeft="10"
           paddingTop="20"
@@ -45,56 +86,63 @@ const Buyer_Account = () => {
           </Link>
           
           </Box>
-          <Box className="buyer_content_options" padding="5" color="#e8c897">
+          <Box className="buyer_content_options" padding="5" color="white">
           <Link to="/BuyerAccount">
           <i class="fa-solid fa-user"></i>  Account
           </Link>
           </Box>
         </Box>
-        <Box className='buyer_account' paddingLeft="16" paddingBottom="20">
-        <h1>Account Page</h1>
-        <FontAwesomeIcon icon={faSearch} className="search-icon" />
-            <input
-              className="search-button-order"
-              type="text"
-              placeholder="Search orders..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              style={{ backgroundColor: "#b18e64", padding: "5px" }}
-            />
-      {/* <input
-        className='buyer_account_search'
-        type="text"
-        placeholder="Search by Order Number"
-        value={searchTerm}
-        onChange={handleSearch}
-      /> */}
-      <table>
-        <thead>
-          <tr>
-            <th className='account_th account_th_order'>Order No.</th>
-            <th className='account_th  account_th_date'>Date</th>
-            <th className='account_th '>Ship Date</th>
-            <th className='account_th'>Tracking</th>
-            <th className='account_th account_th_status'>Status</th>
-          </tr>
-        </thead>
-        <tbody className='buyer_account_content'>
-          {filteredOrders.map(order => (
-            <tr key={order.orderNo}>
-              <td className='buyer_account_content'>{order.orderNo}</td>
-              <td >{order.date}</td>
-              <td>{order.shipDate}</td>
-              <td>{order.tracking}</td>
-              <td>{order.status}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+        <Box className='buyer_account' paddingLeft="16" paddingBottom="20" bg="rgb(174, 225, 174)">
+        <Box
+          maxW="md"
+          marginLeft="9"
+          height="96"
+          borderRadius="lg"
+          boxShadow="md"
+          alignItems="center"
+          textAlign="center"
+          justifyContent="center"
+          mt="86"
+          width="xl"
+        >
+          <Flex direction="column" alignItems="center" p="4">
+            <Text color="black" fontWeight="extrabold" fontSize="2xl">
+              Buyer
+            </Text>
+            {/* Profile picture */}
+            <Box borderRadius="full" boxShadow="lg">
+              <Image
+                src={myImage}
+                alt="Profile Picture"
+                borderRadius="full"
+                boxSize="150px"
+              />
+            </Box>
+
+            <Text mt="4" fontWeight="bold" fontSize="xl">
+              {username}
+            </Text>
+
+            <Text mt="2" color="gray.600" fontWeight="bold">
+              {email}
+            </Text>
+            <Box
+              bg="green.800"
+              borderRadius="full"
+              boxShadow="md"
+              width="24"
+              height="8"
+              color="white"
+            >
+              <button onClick={handleLogout}>Logout</button>
+            </Box>
+          </Flex>
+        </Box>
         </Box>
       </Box>
     </ChakraProvider>
   )
 }
 
-export default Buyer_Account
+export default Buyer_Account;
+

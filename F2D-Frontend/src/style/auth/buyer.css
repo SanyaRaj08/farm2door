@@ -4,5 +4,8 @@
     font-weight: bold;
     font-family: Playball;
 }
-
+#login_bg2{
+    opacity: 0.9;
+background-image: url('../../image/login_bg5.png');
+}
 /* styles.css */

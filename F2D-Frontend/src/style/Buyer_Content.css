@@ -2,8 +2,8 @@
     padding-top: 10px;
     padding-bottom: 10px;
     text-decoration: none;
-    color: #665039;
-    background: #b18e64;
+    color: rgb(50, 81, 50);
+    background: rgb(50, 110, 50);
     font-family: Prociono;
     font-size: 25px;
     font-style: normal;
@@ -16,10 +16,10 @@
 .buyer_home{
     padding-right: 20px;
     padding-bottom: 20px;
-    background: #e8c897;
+    background: rgb(174, 225, 174);
     padding-left: 20px;
     padding-top: 20px;
-    color: #665039;
+    color: rgb(50, 81, 50);
     font-family: Prociono;
     font-size: 25px;
     font-style: normal;
@@ -32,18 +32,15 @@
     width: 300px;
     margin: 10px;
     padding: 10px;
-    background: #665039;
+    background: rgb(50, 81, 50);
     margin-bottom: 5px;
+    color: "white";
 }
 .item-container{
     display: flex;
-    
+    color:white;
     flex-wrap: wrap;
 }
-/* .item-container{
-    
-    width: 350px;
-} */
 .b_view{
     width: 400px;
 }
@@ -53,37 +50,38 @@
 .b_chck{
     margin-left: 10px;
     width: 150px;
-    color: #e8c897;
-    background: #665039;
+    color: rgb(96, 171, 96);
+    background: rgb(50, 81, 50);
     border-radius: 5px;
 }
 .button{
-
-    color: #665039;
+    color: rgb(50, 81, 50);
     border-radius: 5px;
-    background: #e8c897;
+    background: rgb(174, 225, 174);
+    margin-top: 2px;
 }
 .button:hover{
     background-color: #e6dbca;
 }
 .buyer_content_options:hover{
-    color: #e8c897;
+    color: rgb(96, 171, 96);
 }
+
 .buyer_account{
     padding-left: 50px;
     padding-left: 40px;
     padding-top: 30px;
-    background-color: #665039;
+    background-color: rgb(174, 225, 174);
     font-family: Prociono;
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     list-style-type: none;
-    color: #b18e64;
+    color: rgb(50, 81, 50);
 }
 .buyer_account_search{
-    background-color: #b18e64;
+    background-color: rgb(174, 225, 174);
     width: 400px;
 }
 .account_th{

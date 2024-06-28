@@ -1,13 +1,26 @@
 import React, { useContext } from "react";
-import { Box, ChakraProvider, Container } from "@chakra-ui/react";
+import { Box, ChakraProvider, Container, useToast } from "@chakra-ui/react";
 import "../../style/Buyer_Content.css";
 import { Link } from "react-router-dom";
 import productContext from "../../Contexts/smallProducts/productContext";
 import Address from "./Address";
 
-const Buyer_Cart = ({ removeItem, calculateTotal, handleCheckout }) => {
+const Buyer_Cart = ({ handleCheckout }) => {
   const context = useContext(productContext);
-  const { cart } = context;
+  const { cart, removeItem } = context;
+
+  const toast = useToast();
+
+  const handleRemoveItem = (productId) => {
+    removeItem(productId);
+    toast({
+      title: "Item removed from cart",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
+  };
+
   return (
     <ChakraProvider>
       <Box bg="#665039">
@@ -15,18 +28,22 @@ const Buyer_Cart = ({ removeItem, calculateTotal, handleCheckout }) => {
           <Box
             display="flex"
             flexDirection="column"
-            color="#665039"
+            color="rgb(174, 225, 174)"
             className="buyer_content"
             paddingLeft="10"
             paddingTop="20"
             width="xl"
           >
-            <Box className="buyer_content_options" padding="5" paddingTop="10">
+            <Box
+              className="buyer_content_options"
+              padding="5"
+              paddingTop="10"
+            >
               <Link to="/BuyerContent">
                 <i class="fa-solid fa-house"></i> Home
               </Link>
             </Box>
-            <Box className="buyer_content_options" padding="5" color="#e8c897">
+            <Box className="buyer_content_options" padding="5" color="white">
               <Link to="/BuyerCart">
                 <i class="fa-solid fa-cart-shopping"></i> Cart
               </Link>
@@ -37,7 +54,7 @@ const Buyer_Cart = ({ removeItem, calculateTotal, handleCheckout }) => {
               </Link>
             </Box>
           </Box>
-          <Box className="buyer_home" bg="#e8c897" width="8xl">
+          <Box className="buyer_home" bg="rgb(174, 225, 174)" width="8xl">
             <div className="cart">
               <h2>Shopping Cart</h2>
               {cart.length === 0 ? (
@@ -45,15 +62,20 @@ const Buyer_Cart = ({ removeItem, calculateTotal, handleCheckout }) => {
               ) : (
                 <div>
                   {cart.map((item) => (
-                    <div key={item.id} className="cart-item card">
+                    <div key={item._id} className="cart-item card">
                       <img
                         src={item.image}
                         alt={item.name}
-                        style={{ width: "100px", height: "100px" }}
+                        style={{ width: "100px", height: "100px", color: "white" }}
                       />
-                      <h3>{item.name}</h3>
-                      <p>Price: ${item.price}</p>
-                      
+                      <h4 style={{ color: "white" }}>{item.name}</h4>
+                      <p style={{ color: "white" }}>Price: ₹{item.price}</p>
+                      <button
+                        className="button"
+                        onClick={() => handleRemoveItem(item._id)}
+                      >
+                        Remove from Cart
+                      </button>
                     </div>
                   ))}
                   {/* <p>Total: ${calculateTotal()}</p> */}
@@ -64,21 +86,26 @@ const Buyer_Cart = ({ removeItem, calculateTotal, handleCheckout }) => {
               )}
             </div>
           </Box>
-          <Box textAlign="center">
+          <Box textAlign="center" bg="rgb(50, 81, 50)">
             <Box
               // marginLeft="96"
-              bg="#665039"
-              color="#b18e64"
+              bg="rgb(50, 81, 50)"
+              color="rgb(174, 225, 174)"
               className="address"
             >
-              <Box paddingTop="5" fontSize="4xl" fontWeight="medium">
+              <Box paddingTop="6" fontSize="3xl" fontWeight="medium" marginLeft="5">
                 Your Address
               </Box>
               <Address />
             </Box>
 
-            <Box className="address" bg="#665039" color="#b18e64">
-              <h1>Contact Us</h1>
+            <Box
+              className="address"
+              bg="rgb(50, 81, 50)"
+              color="rgb(174, 225, 174)"
+              fontSize="md"
+            >
+              <h3>Contact Us</h3>
               <Box
                 textAlign="left"
                 paddingLeft="20"
@@ -107,5 +134,6 @@ const Buyer_Cart = ({ removeItem, calculateTotal, handleCheckout }) => {
 };
 
 export default Buyer_Cart;
+
 
 

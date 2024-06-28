@@ -2,8 +2,17 @@
 font-family: Prociono;
 }
 .answer{
+    
     color: #E8C897;
     font-family: Prociono;
+    background-color: rgb(55, 97, 67);
+}
+.faq_img{
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+  background-image: url('../../image/faq_img.png');
 }
 @media screen and (max-width: 508px) {
     .answer{
@@ -38,6 +47,9 @@ font-family: Prociono;
     /* Styles for screens with a minimum width of 1025 pixels */
     .answer{
         width: 1150px;
+       }
+       .faq_img2{
+        width: 1400;
        }
   }
   

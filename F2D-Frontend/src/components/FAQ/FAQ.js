@@ -11,9 +11,11 @@ import "../../style/faq/faq.css";
 const FAQ = () => {
   return (
     <ChakraProvider>
-    <Box bg="#665039" >
-    <Box className='faq_img' bg="#B18E64">
-    <img src={faq_img} alt="" />
+    <Box bg="rgb(55, 97, 67)" >
+    <Box className='faq_img' textAlign="center" alignItems="center">
+  
+    {/* <img className='faq_img2' src={faq_img} alt="" /> */}
+   
     </Box>
     
     <Box>

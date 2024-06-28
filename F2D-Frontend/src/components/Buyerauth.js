@@ -12,7 +12,7 @@ import map_img from "../image/map_img.png";
 const customTheme = extendTheme({
     colors: {
       customColorScheme: {
-        100: '#e8c897'
+        100: 'rgb(50, 81, 50)'
       },
     },
     fontSizes: {
@@ -26,15 +26,32 @@ const customTheme = extendTheme({
 const Buyerauth = () => {
   return (
     <ChakraProvider theme={customTheme}>
-   <Flex  bg="beige" width="100%" height="585px">
       
    
-    <Box width="xl" paddingTop="80px" bg="#665039" color="#e8c897" >
-      <Box bg="#665039" p={3} m={3} marginLeft="100px" marginRight="100px" color="#e8c897" className='buyer_auth' fontSize="customFont">
+   <Box
+      className='login_bg'
+      id='login_bg2'
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        height="97vh" // Adjust the height to fit your design
+        marginY="5"
+      >
+    <Box
+        
+        bg="rgba(255, 255, 255, 0.8)"
+        p={'5'}
+        m={3}
+        borderRadius="lg"
+        color="rgb(50, 81, 50)"
+        className='buyer_auth'
+        fontSize="customFont"
+        width="md"
+      >
         <Tabs variant="soft-rounded" colorScheme="customColorScheme">
           <TabList>
-            <Tab className='tab_name' fontSize="2xl" width="50%" color="#e8c897" letterSpacing="1px">Login</Tab>
-            <Tab className='tab_name' fontSize="2xl" width="50%" color="#e8c897" letterSpacing="1px">Signup</Tab>
+          <Tab width="50%" color="rgb(50, 81, 50)">Login</Tab>
+          <Tab width="50%" color="rgb(50, 81, 50)">Signup</Tab>
           </TabList>
           <TabPanels >
             <TabPanel >
@@ -47,11 +64,7 @@ const Buyerauth = () => {
         </Tabs>
       </Box>
 </Box>
-<Container>
-<img  className='map_img' src={map_img} alt="" />
-   </Container>
    
-</Flex>
     </ChakraProvider>
   )
 }

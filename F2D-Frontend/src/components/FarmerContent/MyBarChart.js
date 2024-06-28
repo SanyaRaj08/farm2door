@@ -24,7 +24,7 @@ const MyBarChart = () => {
             key={rating}
             style={{
               cursor: 'pointer',
-              color: rating <= selectedRating ? '#665039' : 'white',
+              color: rating <= selectedRating ? 'rgb(50, 81, 50)' : 'white',
             }}
             onClick={() => handleRatingClick(rating)}
           >
@@ -43,7 +43,7 @@ const MyBarChart = () => {
         <XAxis type="number" />
         <YAxis dataKey="stars" type="category" />
         <Tooltip />
-        <Bar dataKey="count" fill="#665039" stroke="none" />
+        <Bar dataKey="count" fill="rgb(50, 81, 50)" stroke="none" />
       </BarChart>
     </div>
   );

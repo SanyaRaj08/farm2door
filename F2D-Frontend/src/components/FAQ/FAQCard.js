@@ -23,12 +23,12 @@ const FAQCard = (props) => {
           lineHeight="normal"
           whiteSpace="break-spaces" // Allows word wrap
           wordWrap="break-word" // Allows word wrap
-          _hover={{ bg: "#B18E64" }}
-          _expanded={{ bg: "#B18E64" }}
+          _hover={{ bg: "rgba(220, 220, 255, 0.7)" }}
+          _expanded={{ bg: "rgba(220, 220, 255, 0.7)" }}
           _focus={{ boxShadow: "outline" }}
           className="question"
-          color="#E8C897"
-          bg="#B18E64"
+          color="rgb(50, 81, 50)"
+          bg="rgba(240, 240, 240, 0.5)"
           marginTop="10"
           padding="3"
           paddingLeft="5"
@@ -50,8 +50,8 @@ const FAQCard = (props) => {
           wordWrap="break-word"
           height="auto"
           className="answer"
-          bg="#B18E64"
-          color="#E8C897"
+          bg="rgb(251, 248, 243)"
+          color="rgb(77, 65, 44)"
           fontSize="xl"
           fontWeight="bold"
           // width={[ "200px","720", "1105px"]}
@@ -60,7 +60,7 @@ const FAQCard = (props) => {
           <MenuItem
             className="answer"
             fontSize="xl"
-            bg="#B18E64"
+            bg="rgb(251, 248, 243)"
             paddingLeft="10"
           >
             <span>{props.answer}</span>

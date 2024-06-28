@@ -56,7 +56,7 @@ const Address = () => {
             {address}
           </Text>
         ))}
-        <Button onClick={openModal} bg="#e8c897" color="#665039" mt={4}>
+        <Button onClick={openModal} bg="white" color="#665039" mt={4}>
           Add Address
         </Button>
 
